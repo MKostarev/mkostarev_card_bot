@@ -8,7 +8,6 @@ bot = telebot.TeleBot(config.TOKEN)
 def start_main_menu(message):
     bot.send_message(message.chat.id, """Привет! 
 Это бот помощник и он же моё портфолио. 
-
 Давай я тебе расскажу что он может.
 
 "Меню":
@@ -20,7 +19,7 @@ def start_main_menu(message):
 /to_do_list - напоминания
 /calculator - простой калькулятор
 /.........
-""")
+""", reply_markup=types.ReplyKeyboardRemove())
 
 
 @bot.message_handler(commands= ['about_me']) #/start - то вызов приветственного экрана который ты сейчас читаешь
@@ -37,7 +36,7 @@ def main_menu(message):
     #startBoard = types.ReplyKeyboardMarkup(resize_keyboard=True)
     #menu = types.KeyboardButton('Услуги')
     #startBoard.add(menu)
-    bot.send_message(message.chat.id, 'Добропожаловать в бот визитку, задел Help')
+    bot.send_message(message.chat.id, 'Добропожаловать в бот визитку, задел Help', reply_markup=types.ReplyKeyboardRemove())
 
 
 
